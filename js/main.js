@@ -45,16 +45,19 @@ let main = document.getElementById("ourTeam");
 for (let i = 0; i < team.length; i++) {
     const newDiv = document.createElement("div")
     const img = document.createElement("img")
+    let newDiv2;
     
     for (const key in team[i]) {
-
+        
         if (team[i][key].includes(".jpg")) {
-            img.src = team[i][key]
+            img.src = team[i][key];
+            newDiv.appendChild(img)
         } else {
-            newDiv.innerText += team[i][key];
+            newDiv2 = document.createElement("div")
+            newDiv2.innerText += team[i][key];
+            newDiv.appendChild(newDiv2)
         }
 
     }
     main.appendChild(newDiv)
-    newDiv.appendChild(img)
 }

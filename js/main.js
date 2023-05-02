@@ -40,6 +40,11 @@ const team = [
 
 console.log(team);
 
-for (const key in team) {
-    console.log(team[key])
+for (let i = 0; i < team.length; i++) {
+    for (const key in team[i]) {
+        console.log(team[i][key])
+        document.getElementById("ourTeam").innerText += team[i][key]
+
+    }
+    
 }

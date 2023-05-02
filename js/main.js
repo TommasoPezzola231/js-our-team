@@ -40,11 +40,13 @@ const team = [
 
 console.log(team);
 
-for (let i = 0; i < team.length; i++) {
-    for (const key in team[i]) {
-        console.log(team[i][key])
-        document.getElementById("ourTeam").innerText += team[i][key]
+let main = document.getElementById("ourTeam")
 
-    }
+for (let i = 0; i < team.length; i++) {
+    const newDiv = document.createElement("p")
     
+    for (const key in team[i]) {
+        newDiv.innerText += team[i][key];
+    }
+    main.appendChild(newDiv)
 }
